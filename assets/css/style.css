@@ -5870,3 +5870,780 @@ section::after {
     padding-block: 60px
     }
 }
+
+/* ========================================================
+   V7: PHILOSOPHY ("THE IDEA") - MODERN ISLAMIC BENTO GRID
+   - Plain white background with no shapes
+   - Clean, direct container layout (no nested sub-container frame)
+   - Clear distinction: General education from regular school,
+     1-hour Islamic & Quranic education from After School Maktab
+   ======================================================== */
+.why-section {
+    background: #ffffff !important;
+    position: relative;
+    padding: clamp(70px, 8vw, 120px) 0;
+    overflow: hidden;
+}
+
+.why-section::before,
+.why-section::after {
+    display: none !important;
+}
+
+/* Neutralize any legacy sub-wrapper so content sits directly in main container */
+.why-wrap {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+.why-wrap::before,
+.why-wrap::after {
+    display: none !important;
+}
+
+/* Section Heading */
+.why-heading {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto clamp(36px, 4.5vw, 56px);
+}
+
+.why-heading .section-label {
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.why-heading h2 {
+    font-size: clamp(34px, 4.2vw, 54px);
+    line-height: 1.32;
+    color: var(--ink);
+    margin: 0 0 16px;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+}
+
+.why-heading h2 span {
+    color: #9d3f4b;
+    position: relative;
+    display: inline-block;
+}
+
+.why-heading-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 14px 0 16px;
+}
+
+.why-divider-line {
+    width: 48px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(184, 145, 100, 0.4), transparent);
+}
+
+.why-divider-star {
+    font-size: 13px;
+    color: #b89164;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.why-heading p {
+    font-size: clamp(16px, 1.25vw, 18.5px);
+    line-height: 1.85;
+    color: #556358;
+    max-width: 660px;
+    margin: 0 auto;
+}
+
+/* Modern Bento Grid */
+.why-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 22px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* Base Bento Card */
+.bento-card {
+    position: relative;
+    border-radius: 26px;
+    padding: clamp(26px, 3vw, 38px);
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Bento Header Tags */
+.bento-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.bento-tag {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.02em;
+}
+
+.bento-tag.gold-tag {
+    background: rgba(184, 145, 100, 0.14);
+    color: #8c632e;
+    border: 1px solid rgba(184, 145, 100, 0.3);
+}
+
+.bento-tag.emerald-tag {
+    background: rgba(228, 198, 145, 0.14);
+    color: #ebd19c;
+    border: 1px solid rgba(228, 198, 145, 0.28);
+}
+
+.bento-subtitle-en {
+    font: 800 11px/1 var(--font-en);
+    letter-spacing: 0.12em;
+    color: #728479;
+}
+
+.bento-mini-ar {
+    font-size: 15px;
+    color: #ebd19c;
+    opacity: 0.9;
+}
+
+/* Bento 1: Balance Hero Card (7 Cols) */
+.bento-hero-balance {
+    grid-column: span 7;
+    background: linear-gradient(135deg, #f6faf6 0%, #edf5ee 60%, #e6efe8 100%);
+    border: 1px solid rgba(43, 97, 72, 0.18);
+    box-shadow: 0 14px 40px rgba(23, 58, 43, 0.05);
+}
+
+.bento-hero-balance:hover {
+    border-color: rgba(43, 97, 72, 0.32);
+    box-shadow: 0 20px 48px rgba(23, 58, 43, 0.09);
+}
+
+.bento-card-bg {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 240px;
+    height: 200px;
+    pointer-events: none;
+    opacity: 0.15;
+    color: #2b6148;
+}
+
+.bento-hero-balance h3 {
+    font-size: clamp(24px, 2.3vw, 32px);
+    line-height: 1.35;
+    color: #153326;
+    margin: 4px 0 12px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.bento-hero-balance .accent-text {
+    color: #9d3f4b;
+}
+
+.bento-hero-balance p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    color: #42584c;
+    margin: 0 0 24px;
+    max-width: 95%;
+}
+
+/* Routine Flow Infographic Strip */
+.bento-timeline-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(43, 97, 72, 0.14);
+    border-radius: 18px;
+    padding: 12px 16px;
+    gap: 8px;
+    margin-top: auto;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.strip-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+    padding: 6px 8px;
+    border-radius: 12px;
+    transition: background 0.25s;
+}
+
+.strip-icon {
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.strip-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #183e2e;
+    line-height: 1.2;
+}
+
+.strip-step small {
+    font-size: 11px;
+    color: #6b7e73;
+    line-height: 1.2;
+}
+
+.strip-arrow {
+    color: #a4b5aa;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.strip-step.active-step {
+    background: #173b2f;
+    padding: 8px 12px;
+    box-shadow: 0 6px 18px rgba(23, 59, 47, 0.22);
+}
+
+.strip-step.active-step .strip-label {
+    color: #ebd19c;
+}
+
+.strip-step.active-step small {
+    color: #d1ded4;
+}
+
+/* Bento 2: 1-Hour Routine Spotlight (5 Cols) */
+.bento-routine-card {
+    grid-column: span 5;
+    background: linear-gradient(150deg, #173b2f 0%, #102e24 60%, #092019 100%);
+    border: 1px solid rgba(228, 198, 145, 0.3);
+    color: #fcf6e8;
+    box-shadow: 0 16px 45px rgba(9, 32, 25, 0.2);
+}
+
+.bento-routine-card:hover {
+    border-color: rgba(228, 198, 145, 0.55);
+    box-shadow: 0 22px 55px rgba(9, 32, 25, 0.3), 
+                0 0 25px rgba(228, 198, 145, 0.12);
+}
+
+.routine-giant-box {
+    margin: 8px 0 16px;
+}
+
+.routine-giant-number {
+    font-size: clamp(52px, 5.5vw, 70px);
+    font-weight: 900;
+    color: #ebd19c;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-family: var(--font-bn-display, inherit);
+}
+
+.routine-giant-number span {
+    font-size: clamp(22px, 2.2vw, 30px);
+    color: #f7ecd5;
+    font-weight: 700;
+}
+
+.routine-giant-caption {
+    font-size: 13px;
+    font-weight: 700;
+    color: #a3c2b1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+.bento-routine-card h4 {
+    font-size: clamp(18px, 1.8vw, 22px);
+    color: #ffffff;
+    margin: 0 0 10px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.bento-routine-card p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: #ccdcd0;
+    margin: 0 0 20px;
+}
+
+.routine-batches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.routine-batches span {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ebd19c;
+    background: rgba(228, 198, 145, 0.1);
+    border: 1px solid rgba(228, 198, 145, 0.24);
+    padding: 6px 13px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.25s, transform 0.25s;
+}
+
+.routine-batches span:hover {
+    background: rgba(228, 198, 145, 0.2);
+    transform: translateY(-2px);
+}
+
+.routine-batches span .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ebd19c;
+}
+
+/* Bento 3 & 4: School Pillar vs Deen Pillar (6 Cols Each) */
+.bento-col-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.bento-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+}
+
+.bento-icon-box svg {
+    width: 22px;
+    height: 22px;
+}
+
+.bento-step-num {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(43, 97, 72, 0.08);
+    color: #245741;
+    border: 1px solid rgba(43, 97, 72, 0.18);
+}
+
+.bento-step-num.gold-text {
+    background: rgba(228, 198, 145, 0.14);
+    color: #edd5a6;
+    border-color: rgba(228, 198, 145, 0.3);
+}
+
+/* Bento 3: School Card */
+.bento-school-card {
+    grid-column: span 6;
+    background: linear-gradient(160deg, #ffffff 0%, #f7faf7 100%);
+    border: 1px solid rgba(43, 97, 72, 0.16);
+    box-shadow: 0 12px 35px rgba(23, 58, 43, 0.04);
+}
+
+.bento-school-card:hover {
+    border-color: rgba(43, 97, 72, 0.35);
+    box-shadow: 0 18px 45px rgba(23, 58, 43, 0.08);
+}
+
+.school-box {
+    background: #eef6ee;
+    color: #2b6148;
+    border: 1px solid rgba(43, 97, 72, 0.2);
+}
+
+.bento-school-card h3 {
+    font-size: clamp(22px, 2.2vw, 28px);
+    color: #17382d;
+    margin: 4px 0 8px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.bento-lead-text {
+    font-size: 15px;
+    color: #4e6356;
+    line-height: 1.7;
+    margin: 0 0 20px;
+}
+
+.bento-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bento-feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    background: rgba(240, 246, 241, 0.65);
+    border: 1px solid rgba(43, 97, 72, 0.1);
+    border-radius: 14px;
+    transition: background 0.25s, transform 0.25s;
+}
+
+.bento-feature-list li:hover {
+    background: #ffffff;
+    transform: translateX(4px);
+    box-shadow: 0 4px 14px rgba(23, 58, 43, 0.05);
+}
+
+.check-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #2b6148;
+    color: #ffffff;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.bento-feature-list li strong {
+    display: block;
+    font-size: 14.5px;
+    color: #17382d;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.bento-feature-list li small {
+    display: block;
+    font-size: 12.5px;
+    color: #5f7568;
+    line-height: 1.4;
+    margin-top: 2px;
+}
+
+.bento-disclaimer-pill {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2b5f47;
+    background: rgba(43, 97, 72, 0.08);
+    border: 1px dashed rgba(43, 97, 72, 0.32);
+    padding: 7px 15px;
+    border-radius: 999px;
+    margin-top: auto;
+    width: fit-content;
+}
+
+/* Bento 4: Deen Card */
+.bento-deen-card {
+    grid-column: span 6;
+    background: linear-gradient(155deg, #173e31 0%, #103227 60%, #0a241b 100%);
+    border: 1px solid rgba(228, 198, 145, 0.32);
+    color: #fdfaf2;
+    box-shadow: 0 16px 45px rgba(8, 28, 22, 0.2);
+}
+
+.bento-deen-card:hover {
+    border-color: rgba(228, 198, 145, 0.6);
+    box-shadow: 0 22px 55px rgba(8, 28, 22, 0.28), 
+                0 0 25px rgba(228, 198, 145, 0.12);
+}
+
+.deen-watermark {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 80px;
+    color: rgba(228, 198, 145, 0.08);
+    pointer-events: none;
+    line-height: 1;
+}
+
+.deen-box {
+    background: rgba(228, 198, 145, 0.16);
+    color: #ebd19c;
+    border: 1px solid rgba(228, 198, 145, 0.3);
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.bento-deen-card h3 {
+    font-size: clamp(22px, 2.2vw, 28px);
+    color: #ffffff;
+    margin: 4px 0 8px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.bento-deen-card .bento-lead-text {
+    color: #cddcd1;
+}
+
+.deen-list li {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(228, 198, 145, 0.18);
+}
+
+.deen-list li:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(228, 198, 145, 0.4);
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.deen-check {
+    background: #ebd19c;
+    color: #103227;
+    font-weight: 800;
+}
+
+.deen-list li strong {
+    color: #ffffff;
+}
+
+.deen-list li small {
+    color: #c0d3c6;
+}
+
+.bento-disclaimer-pill.gold-pill {
+    background: rgba(228, 198, 145, 0.12);
+    border: 1px dashed rgba(228, 198, 145, 0.42);
+    color: #f5e4c2;
+}
+
+/* Bento 5: 4 Cornerstones of Childhood (Full Width 12 Cols) */
+.bento-outcomes-card {
+    grid-column: span 12;
+    background: linear-gradient(145deg, #faf7f2 0%, #f6f0e6 100%);
+    border: 1px solid rgba(184, 145, 100, 0.25);
+    box-shadow: 0 12px 35px rgba(60, 40, 20, 0.04);
+}
+
+.bento-outcomes-card:hover {
+    border-color: rgba(184, 145, 100, 0.45);
+    box-shadow: 0 18px 45px rgba(60, 40, 20, 0.08);
+}
+
+.outcomes-top {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 28px;
+}
+
+.outcomes-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #8c632e;
+    background: rgba(184, 145, 100, 0.14);
+    border: 1px solid rgba(184, 145, 100, 0.32);
+    padding: 5px 16px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+}
+
+.outcomes-badge .sparkle {
+    color: #b89164;
+}
+
+.outcomes-top p {
+    font-size: 15px;
+    color: #555c56;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.outcome-box {
+    background: #ffffff;
+    border: 1px solid rgba(184, 145, 100, 0.18);
+    border-radius: 18px;
+    padding: 22px 18px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.outcome-box:hover {
+    transform: translateY(-4px);
+    border-color: #c9a76d;
+    box-shadow: 0 10px 24px rgba(184, 145, 100, 0.12);
+}
+
+.outcome-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(184, 145, 100, 0.12);
+    color: #8c632e;
+    font-weight: 800;
+    font-size: 13px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 12px;
+    border: 1px solid rgba(184, 145, 100, 0.25);
+    font-family: var(--font-bn-display, inherit);
+}
+
+.outcome-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #17382d;
+    margin-bottom: 6px;
+    line-height: 1.35;
+}
+
+.outcome-desc {
+    font-size: 13px;
+    color: #616e65;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Bottom Synergy Footnote Banner */
+.why-synergy-banner {
+    margin: 36px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #ffffff;
+    border: 1px solid rgba(43, 97, 72, 0.14);
+    padding: 12px 26px;
+    border-radius: 999px;
+    max-width: max-content;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.synergy-icon {
+    color: #b89164;
+    font-size: 14px;
+}
+
+.why-footnote {
+    margin: 0;
+    font-size: 14px;
+    color: #556358;
+    line-height: 1.6;
+}
+
+.why-footnote strong {
+    color: #17382d;
+    font-weight: 700;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1080px) {
+    .bento-hero-balance {
+        grid-column: span 12;
+    }
+
+    .bento-routine-card {
+        grid-column: span 12;
+    }
+
+    .bento-school-card {
+        grid-column: span 6;
+    }
+
+    .bento-deen-card {
+        grid-column: span 6;
+    }
+
+    .outcomes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+}
+
+@media (max-width: 780px) {
+    .why-bento-grid {
+        gap: 16px;
+    }
+
+    .bento-school-card {
+        grid-column: span 12;
+    }
+
+    .bento-deen-card {
+        grid-column: span 12;
+    }
+
+    .outcomes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bento-timeline-strip {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .strip-arrow {
+        transform: rotate(90deg);
+    }
+
+    .why-synergy-banner {
+        border-radius: 20px;
+        padding: 14px 18px;
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}
+
+
