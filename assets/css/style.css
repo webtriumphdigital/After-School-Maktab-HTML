@@ -1085,7 +1085,7 @@ p {
 
 .intro-numbers b {
     display: block;
-    color: #1c4636;
+    color: #9b7046;
     font: 700 32px var(--font-en);
     letter-spacing: -0.08em;
 }
@@ -5500,7 +5500,6 @@ section::after {
     content: "";
     position: absolute;
     left: 0;
-    top: 16px;
     bottom: 16px;
     width: 3px;
     background: transparent;
@@ -8238,7 +8237,11 @@ body {
 
 /* Left Part: Contact Information */
 .contact-copy {
-    background: linear-gradient(180deg, rgba(246, 248, 245, 0.65) 0%, rgba(240, 245, 241, 0.5) 100%) !important;
+    background: linear-gradient(
+        180deg,
+        rgba(246, 248, 245, 0.65) 0%,
+        rgba(240, 245, 241, 0.5) 100%
+    ) !important;
     border: none !important;
     border-right: 1px solid rgba(19, 42, 37, 0.08) !important;
     border-radius: 0 !important;
@@ -8611,7 +8614,12 @@ body {
 .footer {
     position: relative !important;
     overflow: hidden !important;
-    background: linear-gradient(180deg, #092921 0%, #061e18 50%, #041611 100%) !important;
+    background: linear-gradient(
+        180deg,
+        #092921 0%,
+        #061e18 50%,
+        #041611 100%
+    ) !important;
 }
 
 .map-wrap {
@@ -8665,8 +8673,16 @@ body {
     width: 100% !important;
     height: 100% !important;
     background:
-        radial-gradient(circle at 85% 20%, rgba(235, 209, 156, 0.07) 0%, transparent 45%),
-        radial-gradient(circle at 15% 75%, rgba(235, 209, 156, 0.05) 0%, transparent 50%) !important;
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(235, 209, 156, 0.07) 0%,
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 15% 75%,
+            rgba(235, 209, 156, 0.05) 0%,
+            transparent 50%
+        ) !important;
     pointer-events: none !important;
     z-index: 1 !important;
 }
@@ -8833,7 +8849,12 @@ body {
 .footer {
     position: relative !important;
     overflow: hidden !important;
-    background: linear-gradient(180deg, #092921 0%, #061e18 50%, #041611 100%) !important;
+    background: linear-gradient(
+        180deg,
+        #092921 0%,
+        #061e18 50%,
+        #041611 100%
+    ) !important;
 }
 
 /* Repeating Delicate Islamic Geometric Girih Tessellation */
@@ -8874,8 +8895,16 @@ body {
     width: 100% !important;
     height: 100% !important;
     background:
-        radial-gradient(circle at 85% 20%, rgba(235, 209, 156, 0.07) 0%, transparent 45%),
-        radial-gradient(circle at 15% 75%, rgba(235, 209, 156, 0.05) 0%, transparent 50%) !important;
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(235, 209, 156, 0.07) 0%,
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 15% 75%,
+            rgba(235, 209, 156, 0.05) 0%,
+            transparent 50%
+        ) !important;
     pointer-events: none !important;
     z-index: 1 !important;
 }
@@ -8885,16 +8914,47 @@ body {
     z-index: 2 !important;
 }
 
-
-
-
-
-
-.footer .wrap {
-    position: relative !important;
-    z-index: 2 !important;
+/* ==========================================================================
+   V19: AUTO-ROTATION TRANSITIONS FOR PILLARS & PROGRAMS
+   ========================================================================== */
+@keyframes contentFadeSwap {
+    0% {
+        opacity: 0.25;
+        transform: translateY(6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+.content-swapping {
+    animation: contentFadeSwap 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
 
+#programImage {
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease !important;
+}
 
+#programImage.img-swapping {
+    opacity: 0.25 !important;
+    transform: scale(0.985) !important;
+}
 
+.pillar-tab {
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease !important;
+}
+
+.program-choice {
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        padding 0.35s ease,
+        border-color 0.35s ease !important;
+}

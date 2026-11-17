@@ -984,8 +984,91 @@
         { en: 'FOUNDATION FIVE', ar: 'الأدب', title: 'ইসলামী শিষ্টাচার', description: 'উত্তম আচরণ, আদব-আখলাক ও দৈনন্দিন জীবনে ইসলামী মূল্যবোধ চর্চার শিক্ষা।', tags: ['উত্তম আচরণ', 'আদব-আখলাক', 'ইসলামী মূল্যবোধ'] }
       ];
       const pillarButtons = $$('.pillar-tab');
-      function choosePillar(n, focus = false) { const d = pillars[n]; if (!d) return; pillarButtons.forEach((b, i) => { b.classList.toggle('active', i === n); b.setAttribute('aria-selected', String(i === n)); b.tabIndex = i === n ? 0 : -1 }); $('#pillarEn').textContent = d.en; $('#pillarCounter').textContent = String(n + 1).padStart(2, '0') + ' / 05'; $('#pillarArabic').textContent = d.ar; $('#pillarTitle').textContent = d.title; $('#pillarDescription').textContent = d.description; $('#pillarDetail').replaceChildren(...d.tags.map(t => { const s = document.createElement('span'); s.textContent = t; return s })); $('#pillarPanel').setAttribute('aria-labelledby', 'pillarTab' + n); if (focus) pillarButtons[n].focus() }
-      pillarButtons.forEach((b, i) => { b.addEventListener('click', () => choosePillar(i)); b.addEventListener('keydown', e => { let next = null; if (['ArrowRight', 'ArrowDown'].includes(e.key)) next = (i + 1) % pillars.length; if (['ArrowLeft', 'ArrowUp'].includes(e.key)) next = (i + pillars.length - 1) % pillars.length; if (e.key === 'Home') next = 0; if (e.key === 'End') next = pillars.length - 1; if (next !== null) { e.preventDefault(); choosePillar(next, true) } }) });
+      let currentPillarIndex = 0;
+      function choosePillar(n, focus = false) {
+        const d = pillars[n];
+        if (!d) return;
+        currentPillarIndex = n;
+        pillarButtons.forEach((b, i) => {
+          b.classList.toggle('active', i === n);
+          b.setAttribute('aria-selected', String(i === n));
+          b.tabIndex = i === n ? 0 : -1;
+        });
+        const pTop = $('.pillar-panel-top'), pArt = $('.pillar-art'), pContent = $('.pillar-content');
+        [pTop, pArt, pContent].forEach(el => {
+          if (el) {
+            el.classList.remove('content-swapping');
+            void el.offsetWidth;
+            el.classList.add('content-swapping');
+          }
+        });
+        $('#pillarEn').textContent = d.en;
+        $('#pillarCounter').textContent = String(n + 1).padStart(2, '0') + ' / 05';
+        $('#pillarArabic').textContent = d.ar;
+        $('#pillarTitle').textContent = d.title;
+        $('#pillarDescription').textContent = d.description;
+        $('#pillarDetail').replaceChildren(...d.tags.map(t => {
+          const s = document.createElement('span');
+          s.textContent = t;
+          return s;
+        }));
+        $('#pillarPanel').setAttribute('aria-labelledby', 'pillarTab' + n);
+        if (focus) pillarButtons[n].focus();
+      }
+
+      let pillarInterval = null, pillarHovered = false, pillarInView = false;
+      function startPillarAuto() {
+        if (pillarInterval) clearInterval(pillarInterval);
+        pillarInterval = setInterval(() => {
+          const pillarsSec = $('#pillars');
+          const isFocusedInside = pillarsSec && pillarsSec.contains(document.activeElement);
+          if (!pillarHovered && pillarInView && !document.hidden && !isFocusedInside) {
+            currentPillarIndex = (currentPillarIndex + 1) % pillars.length;
+            choosePillar(currentPillarIndex);
+          }
+        }, 4200);
+      }
+
+      pillarButtons.forEach((b, i) => {
+        b.addEventListener('click', () => {
+          choosePillar(i);
+          startPillarAuto();
+        });
+        b.addEventListener('keydown', e => {
+          let next = null;
+          if (['ArrowRight', 'ArrowDown'].includes(e.key)) next = (i + 1) % pillars.length;
+          if (['ArrowLeft', 'ArrowUp'].includes(e.key)) next = (i + pillars.length - 1) % pillars.length;
+          if (e.key === 'Home') next = 0;
+          if (e.key === 'End') next = pillars.length - 1;
+          if (next !== null) {
+            e.preventDefault();
+            choosePillar(next, true);
+            startPillarAuto();
+          }
+        });
+      });
+
+      const pillarStage = $('.pillars-stage');
+      if (pillarStage) {
+        pillarStage.addEventListener('mouseenter', () => { pillarHovered = true; });
+        pillarStage.addEventListener('mouseleave', () => { pillarHovered = false; });
+        pillarStage.addEventListener('touchstart', () => { pillarHovered = true; }, { passive: true });
+        pillarStage.addEventListener('touchend', () => {
+          setTimeout(() => { pillarHovered = false; }, 2500);
+        }, { passive: true });
+      }
+
+      const pillarsSection = $('#pillars');
+      if (pillarsSection && 'IntersectionObserver' in window) {
+        const pillarObs = new IntersectionObserver(entries => {
+          pillarInView = entries[0].isIntersecting;
+        }, { threshold: 0.12 });
+        pillarObs.observe(pillarsSection);
+      } else {
+        pillarInView = true;
+      }
+      startPillarAuto();
+
       const programs = [
         { title: 'আফটার স্কুল মাকতাব', description: 'স্কুলগামী শিশু-কিশোরদের নিয়মিত পড়াশোনার পাশাপাশি কুরআন, সুন্নাহ, আকিদা, ফিকহ ও ইসলামী আদব-আখলাক শেখার পরিকল্পিত শিক্ষা বিভাগ।', img: 'https://images.pexels.com/photos/20627702/pexels-photo-20627702.jpeg?auto=compress&cs=tinysrgb&w=1050', alt: 'প্রতিনিধিত্বমূলক আলোকচিত্র: শিশুদের কুরআন শিক্ষা—এটি প্রতিষ্ঠানের নিজস্ব ছবি নয়' },
         { title: 'আফটার স্কুল হিফজ', description: 'কুরআন হিফজে আগ্রহী এবং উপযোগী হিসেবে বিবেচিত শিক্ষার্থীদের জন্য প্রচারপত্রে উল্লিখিত বিভাগ। ভর্তি যোগ্যতা ও কার্যক্রমের বিস্তারিত জানতে যোগাযোগ করুন।', img: 'https://images.pexels.com/photos/11758987/pexels-photo-11758987.jpeg?auto=compress&cs=tinysrgb&w=1050', alt: 'প্রতিনিধিত্বমূলক আলোকচিত্র: কুরআন পাঠে মনোযোগী শিশু—এটি প্রতিষ্ঠানের নিজস্ব ছবি নয়' },
@@ -994,9 +1077,81 @@
         { title: 'প্রি-মাকতাব', description: 'প্রায় চার থেকে পাঁচ বছর বয়সী ছোট শিশুদের জন্য প্রাথমিক পর্যায়ের শিক্ষাবিভাগ হিসেবে উল্লেখিত। বয়সসীমা, ভর্তি ও বর্তমান ব্যাচ সম্পর্কে যোগাযোগ করুন।', img: 'https://images.pexels.com/photos/37350652/pexels-photo-37350652.jpeg?auto=compress&cs=tinysrgb&w=1050', alt: 'প্রতিনিধিত্বমূলক আলোকচিত্র: শিশু কুরআন পড়ছে—প্রতিষ্ঠানের নিজস্ব ছবি নয়' }
       ];
       const choices = $$('.program-choice'), programImage = $('#programImage');
-      function chooseProgram(n) { const d = programs[n]; if (!d) return; choices.forEach((b, i) => { b.classList.toggle('selected', i === n); b.setAttribute('aria-pressed', String(i === n)) }); $('#programIndex').textContent = String(n + 1).padStart(2, '0'); $('#programTitle').textContent = d.title; $('#programDesc').textContent = d.description; programImage.style.display = 'block'; programImage.src = d.img; programImage.alt = d.alt; if (programImage.complete && programImage.naturalWidth === 0) programImage.style.display = 'none' }
-      choices.forEach((b, i) => b.addEventListener('click', () => chooseProgram(i)));
-      $$('[data-footer-program]').forEach(a => a.addEventListener('click', () => chooseProgram(Number(a.dataset.footerProgram))));
+      let currentProgramIndex = 0;
+      function chooseProgram(n) {
+        const d = programs[n];
+        if (!d) return;
+        currentProgramIndex = n;
+        choices.forEach((b, i) => {
+          b.classList.toggle('selected', i === n);
+          b.setAttribute('aria-pressed', String(i === n));
+        });
+        const pCopy = $('.program-feature-copy');
+        if (pCopy) {
+          pCopy.classList.remove('content-swapping');
+          void pCopy.offsetWidth;
+          pCopy.classList.add('content-swapping');
+        }
+        $('#programIndex').textContent = String(n + 1).padStart(2, '0');
+        $('#programTitle').textContent = d.title;
+        $('#programDesc').textContent = d.description;
+        if (programImage) {
+          programImage.classList.add('img-swapping');
+          setTimeout(() => {
+            programImage.style.display = 'block';
+            programImage.src = d.img;
+            programImage.alt = d.alt;
+            if (programImage.complete && programImage.naturalWidth === 0) programImage.style.display = 'none';
+            programImage.classList.remove('img-swapping');
+          }, 120);
+        }
+      }
+
+      let programInterval = null, programHovered = false, programInView = false;
+      function startProgramAuto() {
+        if (programInterval) clearInterval(programInterval);
+        programInterval = setInterval(() => {
+          const progsSec = $('#programs');
+          const isFocusedInside = progsSec && progsSec.contains(document.activeElement);
+          if (!programHovered && programInView && !document.hidden && !isFocusedInside) {
+            currentProgramIndex = (currentProgramIndex + 1) % programs.length;
+            chooseProgram(currentProgramIndex);
+          }
+        }, 4600);
+      }
+
+      choices.forEach((b, i) => {
+        b.addEventListener('click', () => {
+          chooseProgram(i);
+          startProgramAuto();
+        });
+      });
+      $$('[data-footer-program]').forEach(a => a.addEventListener('click', () => {
+        const idx = Number(a.dataset.footerProgram);
+        chooseProgram(idx);
+        startProgramAuto();
+      }));
+
+      const programShell = $('.program-shell');
+      if (programShell) {
+        programShell.addEventListener('mouseenter', () => { programHovered = true; });
+        programShell.addEventListener('mouseleave', () => { programHovered = false; });
+        programShell.addEventListener('touchstart', () => { programHovered = true; }, { passive: true });
+        programShell.addEventListener('touchend', () => {
+          setTimeout(() => { programHovered = false; }, 2500);
+        }, { passive: true });
+      }
+
+      const programsSection = $('#programs');
+      if (programsSection && 'IntersectionObserver' in window) {
+        const progObs = new IntersectionObserver(entries => {
+          programInView = entries[0].isIntersecting;
+        }, { threshold: 0.12 });
+        progObs.observe(programsSection);
+      } else {
+        programInView = true;
+      }
+      startProgramAuto();
       const form = $('#contactForm'), status = $('#formStatus'), fallback = $('#whatsappFallback');
       const normDigits = s => String(s).replace(/[০-৯]/g, ch => String(ch.charCodeAt(0) - 0x09E6)).replace(/[٠-٩]/g, ch => String(ch.charCodeAt(0) - 0x0660));
       form.addEventListener('submit', e => { e.preventDefault(); fallback.hidden = true; status.classList.remove('error'); const name = form.elements.name.value.trim(), phone = normDigits(form.elements.phone.value).replace(/[\s()-]/g, ''), program = form.elements.program.value, message = form.elements.message.value.trim(); if (name.length < 2) { status.textContent = 'অনুগ্রহ করে আপনার নাম লিখুন।'; status.classList.add('error'); form.elements.name.focus(); return } if (!/^(?:\+?88)?01\d{9}$/.test(phone)) { status.textContent = 'সঠিক ১১ সংখ্যার বাংলাদেশি মোবাইল নম্বর দিন।'; status.classList.add('error'); form.elements.phone.focus(); return } if (!program) { status.textContent = 'আপনার আগ্রহের বিষয় নির্বাচন করুন।'; status.classList.add('error'); form.elements.program.focus(); return } if (message.length < 5) { status.textContent = 'আপনার প্রশ্ন বা বার্তা একটু বিস্তারিত লিখুন।'; status.classList.add('error'); form.elements.message.focus(); return } const msg = `আসসালামু আলাইকুম। আফটার স্কুল মাকতাব বাংলাদেশ সম্পর্কে জানতে চাই।\n\nনাম: ${name}\nমোবাইল: ${phone}\nবিষয়: ${program}\nবার্তা: ${message}`; const url = 'https://wa.me/8801942079507?text=' + encodeURIComponent(msg); fallback.href = url; fallback.hidden = false; status.textContent = 'আপনার মেসেজ প্রস্তুত। WhatsApp-এ খুলে Send চাপলে বার্তাটি পাঠানো হবে।'; const win = window.open(url, '_blank', 'noopener,noreferrer'); if (!win) { status.textContent += ' নিচের লিংকটি ব্যবহার করুন।' } });
