@@ -7244,8 +7244,11 @@ section::after {
     background: linear-gradient(165deg, #ffffff 0%, #f9f7f2 100%) !important;
     border: 1px solid rgba(19, 42, 37, 0.09) !important;
     border-radius: 32px !important;
-    padding: clamp(28px, 3.5vw, 38px) clamp(22px, 3.2vw, 36px) clamp(24px, 3vw, 30px) !important;
-    box-shadow: 0 20px 50px rgba(19, 42, 37, 0.05), 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+    padding: clamp(28px, 3.5vw, 38px) clamp(22px, 3.2vw, 36px)
+        clamp(24px, 3vw, 30px) !important;
+    box-shadow:
+        0 20px 50px rgba(19, 42, 37, 0.05),
+        0 2px 8px rgba(0, 0, 0, 0.02) !important;
     position: relative !important;
     overflow: hidden !important;
 }
@@ -7303,8 +7306,12 @@ section::after {
     border-radius: 999px !important;
     font-size: 13.5px !important;
     font-weight: 600 !important;
-    box-shadow: 0 4px 16px rgba(23, 59, 47, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
-    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    box-shadow:
+        0 4px 16px rgba(23, 59, 47, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease !important;
 }
 
 .rhythm-badge-highlight:hover {
@@ -7346,10 +7353,11 @@ section::after {
     border-radius: 20px !important;
     box-shadow: 0 3px 12px rgba(19, 42, 37, 0.02) !important;
     position: relative !important;
-    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
-                box-shadow 0.25s ease,
-                border-color 0.25s ease,
-                background 0.25s ease !important;
+    transition:
+        transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease !important;
     text-align: left !important;
     margin: 0 !important;
 }
@@ -7528,3 +7536,77 @@ section::after {
     }
 }
 
+/* ========================================================
+   V11: PARENTS SECTION (#parents) - FULL EDGE-TO-EDGE REPEATING ISLAMIC GEOMETRIC PATTERN
+   - Complete 8-pointed Islamic geometric star rosette repeated across the 100% entire section
+   - Fully overrides any legacy fixed width/height constraints
+   ======================================================== */
+.parents-section {
+    position: relative !important;
+    background: linear-gradient(
+        180deg,
+        #072e26 0%,
+        #05241e 50%,
+        #031b16 100%
+    ) !important;
+    overflow: hidden !important;
+}
+
+/* Repeating Entire Islamic Geometric Shape Across Whole 100% x 100% Section */
+.parents-section::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23ebd19c'%3E%3Ccircle cx='70' cy='70' r='58' stroke-width='1.1' stroke-opacity='0.42'/%3E%3Ccircle cx='70' cy='70' r='44' stroke-width='0.9' stroke-dasharray='3 4' stroke-opacity='0.35'/%3E%3Ccircle cx='70' cy='70' r='22' stroke-width='1' stroke-opacity='0.42'/%3E%3Cpolygon points='70,20 80,48 106,34 92,60 120,70 92,80 106,106 80,92 70,120 60,92 34,106 48,80 20,70 48,60 34,34 60,48' stroke-width='1.25' stroke-opacity='0.55'/%3E%3Cline x1='70' y1='6' x2='70' y2='134' stroke-width='0.8' stroke-dasharray='3 5' stroke-opacity='0.25'/%3E%3Cline x1='6' y1='70' x2='134' y2='70' stroke-width='0.8' stroke-dasharray='3 5' stroke-opacity='0.25'/%3E%3Ccircle cx='0' cy='0' r='14' stroke-width='0.9' stroke-opacity='0.35'/%3E%3Ccircle cx='140' cy='0' r='14' stroke-width='0.9' stroke-opacity='0.35'/%3E%3Ccircle cx='140' cy='140' r='14' stroke-width='0.9' stroke-opacity='0.35'/%3E%3Ccircle cx='0' cy='140' r='14' stroke-width='0.9' stroke-opacity='0.35'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-size: 140px 140px !important;
+    background-repeat: repeat !important;
+    background-position: center !important;
+    opacity: 0.15 !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* Subtle Ambient Depth Across Full Canvas */
+.parents-section::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(235, 209, 156, 0.08) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 18% 30%,
+            rgba(235, 209, 156, 0.06) 0%,
+            transparent 50%
+        ) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+.parents-section .parents-grid {
+    position: relative !important;
+    z-index: 2 !important;
+}
