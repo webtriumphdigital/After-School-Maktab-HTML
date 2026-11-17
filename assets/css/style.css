@@ -8393,4 +8393,508 @@ body {
     }
 }
 
+/* ========================================================
+   V17: LOCATION SECTION (#location) - MODERN LUXURY REDESIGN
+   - Eliminates deformed 110px corner & muddy brownish background
+   - Balanced, symmetrical 32px rounded luxury card container
+   - Pure pearl & white surface matching modern institutional aesthetic
+   - Elevated phone contact cards and dark emerald direction button
+   - Seamless responsive stacking for tablet and mobile
+   ======================================================== */
+.location-frame {
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    min-height: 480px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(19, 42, 37, 0.09) !important;
+    border-radius: 32px !important;
+    box-shadow:
+        0 20px 50px rgba(19, 42, 37, 0.06),
+        0 2px 8px rgba(0, 0, 0, 0.02) !important;
+    overflow: hidden !important;
+}
+
+.map-wrap {
+    min-height: 480px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-right: 1px solid rgba(19, 42, 37, 0.08) !important;
+    border-radius: 0 !important;
+}
+
+.map-wrap iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 480px !important;
+    border: 0 !important;
+}
+
+.location-info {
+    background: linear-gradient(165deg, #ffffff 0%, #faf8f3 100%) !important;
+    border-radius: 0 !important;
+    padding: clamp(34px, 3.8vw, 48px) clamp(26px, 3.2vw, 40px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    position: relative !important;
+}
+
+.location-seal,
+.location-info::before {
+    display: none !important;
+}
+
+.location-info .small-overline {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font: 800 11px/1 var(--font-en) !important;
+    letter-spacing: 0.14em !important;
+    color: #8c632e !important;
+    text-transform: uppercase !important;
+    background: rgba(184, 145, 100, 0.12) !important;
+    border: 1px solid rgba(184, 145, 100, 0.28) !important;
+    padding: 5px 13px !important;
+    border-radius: 999px !important;
+    width: max-content !important;
+    margin-bottom: 12px !important;
+}
+
+.location-info h3 {
+    font-size: clamp(26px, 2.6vw, 34px) !important;
+    font-weight: 800 !important;
+    color: #17382d !important;
+    margin: 0 0 10px !important;
+    line-height: 1.3 !important;
+}
+
+.location-info p {
+    font-size: 14.5px !important;
+    color: #55685a !important;
+    line-height: 1.75 !important;
+    margin: 0 0 20px !important;
+}
+
+.location-calls {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 9px !important;
+    border: none !important;
+    margin: 0 0 20px !important;
+    padding: 0 !important;
+}
+
+.location-calls a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(19, 42, 37, 0.1) !important;
+    border-radius: 13px !important;
+    padding: 12px 18px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #17382d !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+    transition: all 0.2s ease !important;
+}
+
+.location-calls a span {
+    font-size: 15px !important;
+    color: #b89164 !important;
+    transition: transform 0.2s ease !important;
+}
+
+.location-calls a:hover {
+    border-color: rgba(184, 145, 100, 0.5) !important;
+    color: #8c632e !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 16px rgba(19, 42, 37, 0.06) !important;
+}
+
+.location-calls a:hover span {
+    transform: translate(2px, -2px) !important;
+}
+
+.location-info .button.button-dark {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #17382d !important;
+    color: #fbf7ee !important;
+    border-radius: 13px !important;
+    padding: 14px 22px !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 16px rgba(23, 56, 45, 0.2) !important;
+    transition: all 0.2s ease !important;
+    width: 100% !important;
+}
+
+.location-info .button.button-dark:hover {
+    background: #1f4b3c !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 8px 22px rgba(23, 56, 45, 0.28) !important;
+}
+
+/* Location Responsive (Tablet & Phone) */
+@media (max-width: 980px) {
+    .location-frame {
+        grid-template-columns: 1fr !important;
+        min-height: 0 !important;
+        border-radius: 26px !important;
+    }
+
+    .map-wrap {
+        height: 320px !important;
+        min-height: 320px !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(19, 42, 37, 0.08) !important;
+    }
+
+    .map-wrap iframe {
+        height: 320px !important;
+        min-height: 320px !important;
+    }
+
+    .location-info {
+        padding: 30px 22px !important;
+    }
+}
+
+@media (max-width: 580px) {
+    .location-frame {
+        border-radius: 22px !important;
+    }
+
+    .map-wrap,
+    .map-wrap iframe {
+        height: 250px !important;
+        min-height: 250px !important;
+    }
+
+    .location-info {
+        padding: 24px 16px !important;
+    }
+}
+
+/* ========================================================
+   V17: LOCATION SECTION (#location) - MODERN LUXURY REDESIGN
+   - Eliminates deformed 110px corner & muddy brownish background
+   - Balanced, symmetrical 32px rounded luxury card container
+   - Pure pearl & white surface matching modern institutional aesthetic
+   - Elevated phone contact cards and dark emerald direction button
+   - Seamless responsive stacking for tablet and mobile
+   ======================================================== */
+.location-frame {
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    min-height: 480px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(19, 42, 37, 0.09) !important;
+    border-radius: 32px !important;
+    box-shadow:
+        0 20px 50px rgba(19, 42, 37, 0.06),
+        0 2px 8px rgba(0, 0, 0, 0.02) !important;
+    overflow: hidden !important;
+}
+/* ========================================================
+   V18: FOOTER (.footer) - CONVENIENT ISLAMIC GEOMETRIC BACKGROUND SHAPES
+   - Rich dark institutional emerald base gradient
+   - Edge-to-edge subtle repeating 8-pointed Islamic Girih star pattern (100px x 100px)
+   - Delicate champagne gold watermark lines (opacity 0.055)
+   - Dual ambient radial illumination for depth and contrast
+   - Content (.footer .wrap) kept cleanly elevated at z-index: 2
+   ======================================================== */
+.footer {
+    position: relative !important;
+    overflow: hidden !important;
+    background: linear-gradient(180deg, #092921 0%, #061e18 50%, #041611 100%) !important;
+}
+
+.map-wrap {
+    min-height: 480px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-right: 1px solid rgba(19, 42, 37, 0.08) !important;
+    border-radius: 0 !important;
+}
+/* Repeating Delicate Islamic Geometric Girih Tessellation */
+.footer::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23ebd19c'%3E%3Ccircle cx='50' cy='50' r='42' stroke-width='0.9' stroke-opacity='0.42'/%3E%3Ccircle cx='50' cy='50' r='30' stroke-width='0.8' stroke-dasharray='2 3' stroke-opacity='0.35'/%3E%3Ccircle cx='50' cy='50' r='14' stroke-width='0.8' stroke-opacity='0.45'/%3E%3Cpolygon points='50,14 57,34 75,25 66,43 86,50 66,57 75,75 57,66 50,86 43,66 25,75 34,57 14,50 34,43 25,25 43,34' stroke-width='1' stroke-opacity='0.55'/%3E%3Cline x1='50' y1='4' x2='50' y2='96' stroke-width='0.7' stroke-dasharray='2 4' stroke-opacity='0.25'/%3E%3Cline x1='4' y1='50' x2='96' y2='50' stroke-width='0.7' stroke-dasharray='2 4' stroke-opacity='0.25'/%3E%3Ccircle cx='0' cy='0' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='100' cy='0' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='100' cy='100' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='0' cy='100' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-size: 100px 100px !important;
+    background-repeat: repeat !important;
+    background-position: center !important;
+    opacity: 0.055 !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+.map-wrap iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 480px !important;
+    border: 0 !important;
+}
+/* Subtle Ambient Radial Glow Watermark */
+.footer::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(235, 209, 156, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 15% 75%, rgba(235, 209, 156, 0.05) 0%, transparent 50%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+.location-info {
+    background: linear-gradient(165deg, #ffffff 0%, #faf8f3 100%) !important;
+    border-radius: 0 !important;
+    padding: clamp(34px, 3.8vw, 48px) clamp(26px, 3.2vw, 40px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    position: relative !important;
+}
+
+.location-seal,
+.location-info::before {
+    display: none !important;
+}
+
+.location-info .small-overline {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font: 800 11px/1 var(--font-en) !important;
+    letter-spacing: 0.14em !important;
+    color: #8c632e !important;
+    text-transform: uppercase !important;
+    background: rgba(184, 145, 100, 0.12) !important;
+    border: 1px solid rgba(184, 145, 100, 0.28) !important;
+    padding: 5px 13px !important;
+    border-radius: 999px !important;
+    width: max-content !important;
+    margin-bottom: 12px !important;
+}
+
+.location-info h3 {
+    font-size: clamp(26px, 2.6vw, 34px) !important;
+    font-weight: 800 !important;
+    color: #17382d !important;
+    margin: 0 0 10px !important;
+    line-height: 1.3 !important;
+}
+
+.location-info p {
+    font-size: 14.5px !important;
+    color: #55685a !important;
+    line-height: 1.75 !important;
+    margin: 0 0 20px !important;
+}
+
+.location-calls {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 9px !important;
+    border: none !important;
+    margin: 0 0 20px !important;
+    padding: 0 !important;
+}
+
+.location-calls a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(19, 42, 37, 0.1) !important;
+    border-radius: 13px !important;
+    padding: 12px 18px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #17382d !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+    transition: all 0.2s ease !important;
+}
+
+.location-calls a span {
+    font-size: 15px !important;
+    color: #b89164 !important;
+    transition: transform 0.2s ease !important;
+}
+
+.location-calls a:hover {
+    border-color: rgba(184, 145, 100, 0.5) !important;
+    color: #8c632e !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 16px rgba(19, 42, 37, 0.06) !important;
+}
+
+.location-calls a:hover span {
+    transform: translate(2px, -2px) !important;
+}
+
+.location-info .button.button-dark {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #17382d !important;
+    color: #fbf7ee !important;
+    border-radius: 13px !important;
+    padding: 14px 22px !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 16px rgba(23, 56, 45, 0.2) !important;
+    transition: all 0.2s ease !important;
+    width: 100% !important;
+}
+
+.location-info .button.button-dark:hover {
+    background: #1f4b3c !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 8px 22px rgba(23, 56, 45, 0.28) !important;
+}
+
+/* Location Responsive (Tablet & Phone) */
+@media (max-width: 980px) {
+    .location-frame {
+        grid-template-columns: 1fr !important;
+        min-height: 0 !important;
+        border-radius: 26px !important;
+    }
+
+    .map-wrap {
+        height: 320px !important;
+        min-height: 320px !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(19, 42, 37, 0.08) !important;
+    }
+
+    .map-wrap iframe {
+        height: 320px !important;
+        min-height: 320px !important;
+    }
+
+    .location-info {
+        padding: 30px 22px !important;
+    }
+}
+
+@media (max-width: 580px) {
+    .location-frame {
+        border-radius: 22px !important;
+    }
+
+    .map-wrap,
+    .map-wrap iframe {
+        height: 250px !important;
+        min-height: 250px !important;
+    }
+
+    .location-info {
+        padding: 24px 16px !important;
+    }
+}
+
+/* ========================================================
+   V18: FOOTER (.footer) - CONVENIENT ISLAMIC GEOMETRIC BACKGROUND SHAPES
+   - Rich dark institutional emerald base gradient
+   - Edge-to-edge subtle repeating 8-pointed Islamic Girih star pattern (100px x 100px)
+   - Delicate champagne gold watermark lines (opacity 0.055)
+   - Dual ambient radial illumination for depth and contrast
+   - Content (.footer .wrap) kept cleanly elevated at z-index: 2
+   ======================================================== */
+.footer {
+    position: relative !important;
+    overflow: hidden !important;
+    background: linear-gradient(180deg, #092921 0%, #061e18 50%, #041611 100%) !important;
+}
+
+/* Repeating Delicate Islamic Geometric Girih Tessellation */
+.footer::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23ebd19c'%3E%3Ccircle cx='50' cy='50' r='42' stroke-width='0.9' stroke-opacity='0.42'/%3E%3Ccircle cx='50' cy='50' r='30' stroke-width='0.8' stroke-dasharray='2 3' stroke-opacity='0.35'/%3E%3Ccircle cx='50' cy='50' r='14' stroke-width='0.8' stroke-opacity='0.45'/%3E%3Cpolygon points='50,14 57,34 75,25 66,43 86,50 66,57 75,75 57,66 50,86 43,66 25,75 34,57 14,50 34,43 25,25 43,34' stroke-width='1' stroke-opacity='0.55'/%3E%3Cline x1='50' y1='4' x2='50' y2='96' stroke-width='0.7' stroke-dasharray='2 4' stroke-opacity='0.25'/%3E%3Cline x1='4' y1='50' x2='96' y2='50' stroke-width='0.7' stroke-dasharray='2 4' stroke-opacity='0.25'/%3E%3Ccircle cx='0' cy='0' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='100' cy='0' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='100' cy='100' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='0' cy='100' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-size: 100px 100px !important;
+    background-repeat: repeat !important;
+    background-position: center !important;
+    opacity: 0.055 !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+/* Subtle Ambient Radial Glow Watermark */
+.footer::after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(235, 209, 156, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 15% 75%, rgba(235, 209, 156, 0.05) 0%, transparent 50%) !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+.footer .wrap {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+
+
+
+
+
+.footer .wrap {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+
+
 
