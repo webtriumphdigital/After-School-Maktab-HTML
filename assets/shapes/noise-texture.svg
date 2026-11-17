@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <filter id="n">
+    <feTurbulence type="fractalNoise" baseFrequency=".64" numOctaves="3" stitchTiles="stitch"/>
+  </filter>
+  <path fill="#fff" filter="url(#n)" opacity=".5" d="M0 0h150v150H0z"/>
+</svg>

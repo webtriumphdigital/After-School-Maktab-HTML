@@ -400,7 +400,8 @@ p {
     clip-path: polygon(50% 0, 100% 15%, 100% 83%, 50% 100%, 0 83%, 0 15%);
 }
 
-.brand-mark svg {
+.brand-mark svg,
+.brand-mark img {
     width: 28px;
     height: 34px;
 }
@@ -475,7 +476,8 @@ p {
     background: #2c5845;
 }
 
-.nav-cta svg {
+.nav-cta svg,
+.nav-cta img {
     width: 19px;
     height: 19px;
 }
@@ -503,7 +505,7 @@ p {
     inset: 0;
     z-index: -1;
     opacity: 0.09;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.64' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.5' d='M0 0h150v150H0z'/%3E%3C/svg%3E");
+    background-image: url("../shapes/noise-texture.svg");
 }
 
 .hero-radial {
@@ -871,7 +873,8 @@ p {
     z-index: 4;
 }
 
-.hero-roundel svg {
+.hero-roundel svg,
+.hero-roundel img {
     width: 100%;
     height: 100%;
     overflow: visible;
@@ -1233,7 +1236,8 @@ p {
     place-items: center;
 }
 
-.why-join svg {
+.why-join svg,
+.why-join img {
     width: 99px;
     height: 99px;
     background: #f7f2e7;
@@ -2355,7 +2359,8 @@ p {
     place-items: center;
 }
 
-.parent-cycle svg {
+.parent-cycle svg,
+.parent-cycle img {
     width: 100%;
     height: 100%;
     color: #72937e;
@@ -2680,7 +2685,8 @@ p {
     z-index: 1;
 }
 
-.map-offline > svg {
+.map-offline > svg,
+.map-offline > img {
     width: 100%;
     height: 100%;
 }
@@ -2790,7 +2796,8 @@ p {
     animation: orbital 90s linear infinite;
 }
 
-.admission-motif svg {
+.admission-motif svg,
+.admission-motif img {
     width: 100%;
     height: 100%;
 }
@@ -3691,7 +3698,8 @@ p {
         height: 0;
     }
 
-    .why-join svg {
+    .why-join svg,
+.why-join img {
         height: 72px;
         width: 72px;
         padding: 13px;
@@ -4318,8 +4326,8 @@ p {
     --line: #d8d1c4;
     --shadow-soft: 0 28px 70px rgba(15, 32, 25, 0.08);
     --shadow-card: 0 18px 42px rgba(12, 31, 23, 0.07);
-    --pattern-geo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%23b18b64' stroke-opacity='.17' stroke-width='1.25'%3E%3Ccircle cx='120' cy='120' r='92'/%3E%3Ccircle cx='120' cy='120' r='46'/%3E%3Cpath d='M120 12V228M12 120H228M42 42L198 198M198 42L42 198'/%3E%3Cpolygon points='120,28 146,94 212,120 146,146 120,212 94,146 28,120 94,94'/%3E%3C/g%3E%3C/svg%3E");
-    --pattern-arch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='240' viewBox='0 0 280 240'%3E%3Cg fill='none' stroke='%231d4538' stroke-opacity='.08' stroke-width='1.6'%3E%3Cpath d='M35 220V88c0-59 45-84 105-84s105 25 105 84v132'/%3E%3Cpath d='M70 220V102c0-36 29-56 70-56s70 20 70 56v118'/%3E%3Cpath d='M105 220v-99c0-18 15-29 35-29s35 11 35 29v99'/%3E%3C/g%3E%3C/svg%3E");
+    --pattern-geo: url("../shapes/pattern-geo.svg");
+    --pattern-arch: url("../shapes/pattern-arch.svg");
 }
 
 body {
@@ -4454,7 +4462,8 @@ section {
     opacity: 0.12;
 }
 
-.why-join svg {
+.why-join svg,
+.why-join img {
     width: 112px;
     height: 112px;
     padding: 19px;
@@ -5167,8 +5176,8 @@ section {
     --olive: #7e907d;
     --cream: #f8f4ec;
     --paper: #f2ece2;
-    --pattern-star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260' viewBox='0 0 260 260'%3E%3Cg fill='none' stroke='%23b89164' stroke-opacity='.13' stroke-width='1.2'%3E%3Cpath d='M130 14 154 82 226 82 168 126 190 198 130 154 70 198 92 126 34 82 106 82Z'/%3E%3Ccircle cx='130' cy='130' r='100'/%3E%3Ccircle cx='130' cy='130' r='52'/%3E%3Cpath d='M130 30V230M30 130H230M54 54L206 206M206 54L54 206'/%3E%3C/g%3E%3C/svg%3E");
-    --pattern-mihrab: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='260' viewBox='0 0 360 260'%3E%3Cg fill='none' stroke='%23b89164' stroke-opacity='.16' stroke-width='1.3'%3E%3Cpath d='M55 232V112c0-66 53-95 125-95s125 29 125 95v120'/%3E%3Cpath d='M96 232V126c0-41 35-65 84-65s84 24 84 65v106'/%3E%3Cpath d='M136 232v-90c0-22 20-37 44-37s44 15 44 37v90'/%3E%3Cpath d='M180 17v215'/%3E%3C/g%3E%3C/svg%3E");
+    --pattern-star: url("../shapes/pattern-star.svg");
+    --pattern-mihrab: url("../shapes/pattern-mihrab.svg");
 }
 
 body {
@@ -6389,7 +6398,8 @@ section::after {
     font-size: 20px;
 }
 
-.bento-icon-box svg {
+.bento-icon-box svg,
+.bento-icon-box img {
     width: 22px;
     height: 22px;
 }
@@ -6854,7 +6864,8 @@ section::after {
     height: clamp(360px, 40vw, 560px);
 }
 
-.verse-bg-shape svg {
+.verse-bg-shape svg,
+.verse-bg-shape img {
     width: 100%;
     height: 100%;
     filter: drop-shadow(0 0 25px rgba(228, 198, 145, 0.18));
@@ -6909,7 +6920,8 @@ section::after {
     opacity: 0.32;
 }
 
-.verse-card-geo svg {
+.verse-card-geo svg,
+.verse-card-geo img {
     width: 100%;
     height: 100%;
     max-width: 720px;
@@ -7398,7 +7410,8 @@ section::after {
     transform: scale(1.08) rotate(4deg);
 }
 
-.rhythm-icon svg {
+.rhythm-icon svg,
+.rhythm-icon img {
     width: 22px;
     height: 22px;
 }
@@ -7569,7 +7582,7 @@ section::after {
     height: 100% !important;
     border: none !important;
     border-radius: 0 !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='none' stroke='%23ebd19c'%3E%3Ccircle cx='70' cy='70' r='58' stroke-width='1.1' stroke-opacity='0.42'/%3E%3Ccircle cx='70' cy='70' r='44' stroke-width='0.9' stroke-dasharray='3 4' stroke-opacity='0.35'/%3E%3Ccircle cx='70' cy='70' r='22' stroke-width='1' stroke-opacity='0.42'/%3E%3Cpolygon points='70,20 80,48 106,34 92,60 120,70 92,80 106,106 80,92 70,120 60,92 34,106 48,80 20,70 48,60 34,34 60,48' stroke-width='1.25' stroke-opacity='0.55'/%3E%3Cline x1='70' y1='6' x2='70' y2='134' stroke-width='0.8' stroke-dasharray='3 5' stroke-opacity='0.25'/%3E%3Cline x1='6' y1='70' x2='134' y2='70' stroke-width='0.8' stroke-dasharray='3 5' stroke-opacity='0.25'/%3E%3Ccircle cx='0' cy='0' r='14' stroke-width='0.9' stroke-opacity='0.35'/%3E%3Ccircle cx='140' cy='0' r='14' stroke-width='0.9' stroke-opacity='0.35'/%3E%3Ccircle cx='140' cy='140' r='14' stroke-width='0.9' stroke-opacity='0.35'/%3E%3Ccircle cx='0' cy='140' r='14' stroke-width='0.9' stroke-opacity='0.35'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-image: url("../shapes/pattern-star-8.svg") !important;
     background-size: 140px 140px !important;
     background-repeat: repeat !important;
     background-position: center !important;
@@ -7883,7 +7896,7 @@ body {
     height: 100% !important;
     border: none !important;
     border-radius: 0 !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23194033' stroke-width='0.9'%3E%3Cpolygon points='30,12 33.6,21.2 42.7,17.3 38.8,26.4 48,30 38.8,33.6 42.7,42.7 33.6,38.8 30,48 26.4,38.8 17.3,42.7 21.2,33.6 12,30 21.2,26.4 17.3,17.3 26.4,21.2' stroke-width='1.1' stroke-opacity='0.65'/%3E%3Ccircle cx='30' cy='30' r='24' stroke-dasharray='2 3' stroke-opacity='0.4'/%3E%3Ccircle cx='30' cy='30' r='8' stroke-opacity='0.55'/%3E%3Ccircle cx='0' cy='0' r='6' stroke-opacity='0.4'/%3E%3Ccircle cx='60' cy='0' r='6' stroke-opacity='0.4'/%3E%3Ccircle cx='60' cy='60' r='6' stroke-opacity='0.4'/%3E%3Ccircle cx='0' cy='60' r='6' stroke-opacity='0.4'/%3E%3Cpath d='M0 30h60M30 0v60' stroke-dasharray='2 4' stroke-opacity='0.3'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-image: url("../shapes/star-rosette.svg") !important;
     background-size: 54px 54px !important;
     background-repeat: repeat !important;
     background-position: center !important;
@@ -8647,7 +8660,7 @@ body {
     height: 100% !important;
     border: none !important;
     border-radius: 0 !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23ebd19c'%3E%3Ccircle cx='50' cy='50' r='42' stroke-width='0.9' stroke-opacity='0.42'/%3E%3Ccircle cx='50' cy='50' r='30' stroke-width='0.8' stroke-dasharray='2 3' stroke-opacity='0.35'/%3E%3Ccircle cx='50' cy='50' r='14' stroke-width='0.8' stroke-opacity='0.45'/%3E%3Cpolygon points='50,14 57,34 75,25 66,43 86,50 66,57 75,75 57,66 50,86 43,66 25,75 34,57 14,50 34,43 25,25 43,34' stroke-width='1' stroke-opacity='0.55'/%3E%3Cline x1='50' y1='4' x2='50' y2='96' stroke-width='0.7' stroke-dasharray='2 4' stroke-opacity='0.25'/%3E%3Cline x1='4' y1='50' x2='96' y2='50' stroke-width='0.7' stroke-dasharray='2 4' stroke-opacity='0.25'/%3E%3Ccircle cx='0' cy='0' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='100' cy='0' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='100' cy='100' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='0' cy='100' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-image: url("../shapes/girih-pattern.svg") !important;
     background-size: 100px 100px !important;
     background-repeat: repeat !important;
     background-position: center !important;
@@ -8875,7 +8888,7 @@ body {
     height: 100% !important;
     border: none !important;
     border-radius: 0 !important;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23ebd19c'%3E%3Ccircle cx='50' cy='50' r='42' stroke-width='0.9' stroke-opacity='0.42'/%3E%3Ccircle cx='50' cy='50' r='30' stroke-width='0.8' stroke-dasharray='2 3' stroke-opacity='0.35'/%3E%3Ccircle cx='50' cy='50' r='14' stroke-width='0.8' stroke-opacity='0.45'/%3E%3Cpolygon points='50,14 57,34 75,25 66,43 86,50 66,57 75,75 57,66 50,86 43,66 25,75 34,57 14,50 34,43 25,25 43,34' stroke-width='1' stroke-opacity='0.55'/%3E%3Cline x1='50' y1='4' x2='50' y2='96' stroke-width='0.7' stroke-dasharray='2 4' stroke-opacity='0.25'/%3E%3Cline x1='4' y1='50' x2='96' y2='50' stroke-width='0.7' stroke-dasharray='2 4' stroke-opacity='0.25'/%3E%3Ccircle cx='0' cy='0' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='100' cy='0' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='100' cy='100' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3Ccircle cx='0' cy='100' r='10' stroke-width='0.8' stroke-opacity='0.35'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-image: url("../shapes/girih-pattern.svg") !important;
     background-size: 100px 100px !important;
     background-repeat: repeat !important;
     background-position: center !important;
@@ -9554,3 +9567,8 @@ body {
 .button:active {
     transform: translateY(0);
 }
+
+
+/* Imported SVG Image Compatibility */
+.fallback-illust img { width: 100%; height: auto; display: block; }
+.brand-mark img { width: 28px; height: 34px; object-fit: contain; display: inline-block; }

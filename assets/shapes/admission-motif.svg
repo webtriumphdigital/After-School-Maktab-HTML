@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 550" fill="none">
+  <circle cx="275" cy="275" r="235" stroke="#fae4be" stroke-width="1.2" opacity="0.3"/>
+  <circle cx="275" cy="275" r="196" stroke="#fae4be" stroke-width="0.8" stroke-dasharray="2 12" opacity="0.35"/>
+  <path d="M275 35c80 110 80 190 0 240C195 225 195 145 275 35Zm0 480c-80-110-80-190 0-240 80 50 80 130 0 240ZM35 275c110-80 190-80 240 0-50 80-130 80-240 0Zm480 0c-110 80-190 80-240 0 50-80 130-80 240 0Z" stroke="#fae4be" stroke-width="1.2" opacity="0.35"/>
+</svg>

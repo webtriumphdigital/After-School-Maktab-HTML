@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 260" fill="none">
+  <path d="M35 116q70-32 135 11v104Q100 194 35 221V116Zm270 0q-70-32-135 11v104q70-37 135-10V116Z" fill="#eed9a6" opacity=".65" />
+  <path d="M35 116q70-32 135 11v104Q100 194 35 221V116Zm270 0q-70-32-135 11v104q70-37 135-10V116Z" stroke="#f5e7c5" stroke-width="3" />
+  <path d="M170 127v104M54 143q52-14 99 6M54 158q52-14 99 6M54 174q52-14 99 6M188 149q47-20 99-6M188 164q47-20 99-6M188 180q47-20 99-6" stroke="#fff4d5" stroke-width="2" opacity=".75" />
+  <path d="M170 54v51m-25-25h50" stroke="#f7dba7" stroke-width="1.5" opacity=".6" />
+</svg>

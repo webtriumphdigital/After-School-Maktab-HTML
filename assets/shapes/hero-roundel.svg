@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <defs>
+    <path id="ringPath" d="M75 75m-53 0a53 53 0 1 1 106 0a53 53 0 1 1-106 0" />
+  </defs>
+  <text fill="#e0c38f" font-family="'Manrope', sans-serif" font-weight="700" font-size="10" letter-spacing="2px">
+    <textPath href="#ringPath">THE LIGHT OF KNOWLEDGE · الْعِلْمُ نُورٌ · </textPath>
+  </text>
+  <circle cx="75" cy="75" r="23" stroke="#e0c38f" stroke-width="1.5" fill="none" />
+  <path d="M75 50v50M50 75h50" stroke="#e0c38f" stroke-width="1.5" />
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <g fill="none" stroke="#b18b64" stroke-opacity=".17" stroke-width="1.25">
+    <circle cx="120" cy="120" r="92"/>
+    <circle cx="120" cy="120" r="46"/>
+    <path d="M120 12V228M12 120H228M42 42L198 198M198 42L42 198"/>
+    <polygon points="120,28 146,94 212,120 146,146 120,212 94,146 28,120 94,94"/>
+  </g>
+</svg>
