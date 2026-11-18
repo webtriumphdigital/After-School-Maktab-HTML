@@ -5007,7 +5007,7 @@ section {
 }
 
 .history-story h2 {
-    max-width: 16ch;
+    margin-bottom: 10px;
 }
 
 .history-quote {
