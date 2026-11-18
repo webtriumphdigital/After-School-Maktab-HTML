@@ -10877,3 +10877,95 @@ img.pillar-rosette {
         max-width: 150px;
     }
 }
+
+/* ==========================================================================
+   Hero Responsive Padding & Layout Refinements
+   ========================================================================== */
+.hero-wrap {
+    box-sizing: border-box;
+}
+
+@media (max-width: 1280px) {
+    .hero-edge-text {
+        display: none !important;
+    }
+    .hero-wrap,
+    .hero-bottom {
+        padding-left: clamp(24px, 4vw, 36px) !important;
+        padding-right: clamp(24px, 4vw, 36px) !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-wrap,
+    .hero-bottom {
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 36px !important;
+        padding: 34px 0 44px !important;
+    }
+    .hero-copy {
+        max-width: 100% !important;
+    }
+    .hero-art {
+        max-width: 520px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-wrap,
+    .hero-bottom {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+    .hero-grid {
+        padding: 24px 0 35px !important;
+        gap: 28px !important;
+    }
+    .hero-kicker {
+        font-size: 11px !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+    .hero h1 {
+        font-size: clamp(30px, 8.5vw, 42px) !important;
+        line-height: 1.28 !important;
+    }
+    .hero-subtitle {
+        font-size: 17px !important;
+        line-height: 1.5 !important;
+    }
+    .hero-description {
+        font-size: 14.5px !important;
+        line-height: 1.7 !important;
+    }
+    .hero-caption {
+        font-size: 13.5px !important;
+        margin-top: 24px !important;
+    }
+    .hero-photo-corner {
+        bottom: 16px !important;
+        right: 0px !important;
+        max-width: calc(100% - 20px) !important;
+        padding: 10px 14px !important;
+        border-radius: 14px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-wrap,
+    .hero-bottom {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+    .hero-grid {
+        padding: 18px 0 28px !important;
+    }
+}
