@@ -321,10 +321,22 @@
   });
 
   $$('[data-footer-program]').forEach(a => {
-    a.addEventListener('click', () => {
+    a.addEventListener('click', (e) => {
       const idx = Number(a.dataset.footerProgram);
-      chooseProgram(idx);
-      startProgramAuto();
+      const targetCard = document.getElementById('program-' + idx);
+      if (targetCard) {
+        e.preventDefault();
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetCard.style.transition = 'box-shadow 0.4s ease, border-color 0.4s ease';
+        targetCard.style.borderColor = '#c9a76d';
+        targetCard.style.boxShadow = '0 0 0 3px rgba(168, 135, 91, 0.4)';
+        setTimeout(() => {
+          targetCard.style.borderColor = '';
+          targetCard.style.boxShadow = '';
+        }, 2200);
+      } else {
+        chooseProgram(idx);
+      }
     });
   });
 
