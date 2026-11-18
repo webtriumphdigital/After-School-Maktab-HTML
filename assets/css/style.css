@@ -10634,3 +10634,127 @@ img.pillar-rosette {
 .scroll-to-top:hover img {
     transform: translateY(-2.5px) !important;
 }
+
+/* ==========================================================================
+   Visual Flaw Elimination: Unified Borders & Zero Corner Bleed
+   ========================================================================== */
+
+/* 1. Pillars Section: Complete elimination of corner background bleed */
+.pillars-stage {
+    display: grid !important;
+    grid-template-columns: 0.86fr 1.14fr !important;
+    border-radius: 32px !important;
+    overflow: hidden !important;
+    border: 1px solid #dfd7c8 !important;
+    background: #f3eee4 !important;
+    box-shadow: 0 20px 50px rgba(19, 42, 37, 0.06), 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+}
+
+.pillar-list {
+    border-radius: 0 !important;
+    background: linear-gradient(180deg, #f7f2e9 0%, #eee8dd 100%) !important;
+    border-right: 1px solid #dfd7c8 !important;
+}
+
+.pillar-panel {
+    border-radius: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+    background: radial-gradient(
+        circle at 75% 18%,
+        rgba(221, 195, 154, 0.08),
+        transparent 18%
+    ),
+    linear-gradient(180deg, #184131 0%, #0d2d24 100%) !important;
+}
+
+.pillar-art::after {
+    border-radius: 18px !important;
+}
+
+/* 2. History Grid: Balanced modern radius */
+.history-grid {
+    border-radius: 34px !important;
+    overflow: hidden !important;
+}
+
+.history-quote {
+    border-radius: 20px !important;
+}
+
+/* 3. Admission Section: Balanced premium radius */
+.admission-frame {
+    border-radius: 36px !important;
+    overflow: hidden !important;
+}
+
+.admission-frame::after {
+    border-radius: 24px !important;
+}
+
+/* 4. Campus Gallery: Consistent card radius */
+.gallery-item,
+.gallery-big,
+.gallery-tall,
+.gallery-small {
+    border-radius: 24px !important;
+    overflow: hidden !important;
+}
+
+/* 5. Leadership Cards: Symmetrical clean radius */
+.leader,
+.leader.first,
+.leader.second {
+    border-radius: 24px !important;
+    overflow: hidden !important;
+}
+
+/* 6. Responsive Refinements */
+@media (max-width: 1024px) {
+    .pillars-stage {
+        grid-template-columns: 1fr !important;
+        border-radius: 26px !important;
+    }
+    .pillar-list {
+        border-right: none !important;
+        border-bottom: 1px solid #dfd7c8 !important;
+    }
+    .history-grid {
+        border-radius: 26px !important;
+    }
+    .admission-frame {
+        border-radius: 26px !important;
+    }
+    .admission-frame::after {
+        border-radius: 18px !important;
+    }
+    .gallery-item,
+    .gallery-big,
+    .gallery-tall,
+    .gallery-small,
+    .leader {
+        border-radius: 20px !important;
+    }
+}
+
+@media (max-width: 580px) {
+    .pillars-stage {
+        border-radius: 20px !important;
+    }
+    .history-grid {
+        border-radius: 20px !important;
+    }
+    .admission-frame {
+        border-radius: 20px !important;
+    }
+    .admission-frame::after {
+        border-radius: 14px !important;
+    }
+    .gallery-item,
+    .gallery-big,
+    .gallery-tall,
+    .gallery-small,
+    .leader {
+        border-radius: 16px !important;
+    }
+}
