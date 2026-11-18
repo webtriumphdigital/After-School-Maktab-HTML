@@ -30,6 +30,8 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 110px;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -10271,5 +10273,234 @@ body {
     .cornerstone-card {
         min-height: auto;
         padding: 26px 22px 20px;
+    }
+}
+
+/* ==========================================================================
+   CROSS-DEVICE COMPATIBILITY & MOBILE RESPONSIVE ENGINE
+   - Mobile Phones (320px - 480px)
+   - Large Phones / Phablets (481px - 680px)
+   - Tablets (681px - 1024px)
+   - Laptops & High-DPI screens (1025px - 1440px+)
+   ========================================================================== */
+
+/* Universal Responsive Safety Guards */
+img, svg, iframe, video {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, li {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Tablet & Phablet Adjustments (max-width: 960px) */
+@media (max-width: 960px) {
+    .dual-wings-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+/* Phablet & Mobile Adjustments (max-width: 680px) */
+@media (max-width: 680px) {
+    .dual-wings-grid .bento-school-card,
+    .dual-wings-grid .bento-deen-card {
+        padding: 24px 18px !important;
+        border-radius: 16px !important;
+    }
+
+    .spotlight-media {
+        min-height: 240px !important;
+    }
+
+    .spotlight-content {
+        padding: 24px 18px !important;
+    }
+
+    .spotlight-features {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        padding: 14px 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .programs-subgrid {
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    .ribbon-crest {
+        border-radius: 14px !important;
+        padding: 14px 18px !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 8px !important;
+    }
+
+    .cornerstones-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .cornerstone-card {
+        min-height: auto !important;
+        padding: 26px 20px 20px !important;
+    }
+}
+
+/* Standard Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Hero Photo Corner Card */
+    .hero-photo-corner {
+        bottom: 20px !important;
+        right: 0px !important;
+        max-width: calc(100% - 20px) !important;
+        padding: 10px 14px !important;
+        border-radius: 16px !important;
+    }
+
+    .hero-photo-corner .arabic {
+        font-size: 20px !important;
+        line-height: 1.4 !important;
+    }
+
+    .hero-photo-corner small {
+        font-size: 10px !important;
+    }
+
+    /* Section 02 Bento Wings */
+    .bento-col-header {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+
+    .bento-icon-box {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .bento-step-num {
+        font-size: 11px !important;
+    }
+
+    .bento-feature-list li {
+        padding: 10px 12px !important;
+        gap: 10px !important;
+        border-radius: 10px !important;
+    }
+
+    .bento-feature-list li strong {
+        font-size: 13.5px !important;
+    }
+
+    .bento-feature-list li small {
+        font-size: 11.5px !important;
+    }
+
+    .bento-disclaimer-pill {
+        white-space: normal !important;
+        line-height: 1.45 !important;
+        font-size: 11px !important;
+        padding: 6px 12px !important;
+    }
+
+    /* Section 02 Cornerstones */
+    .cornerstones-kicker-badge {
+        font-size: 10.5px !important;
+        padding: 5px 12px !important;
+        white-space: normal !important;
+        text-align: center !important;
+        line-height: 1.4 !important;
+    }
+
+    .cornerstones-subheading {
+        font-size: 23px !important;
+    }
+
+    /* Section 04 Spotlight Track Card */
+    .spotlight-content h3 {
+        font-size: 22px !important;
+    }
+
+    .spotlight-lead {
+        font-size: 14px !important;
+    }
+
+    .spotlight-action {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+    }
+
+    .spotlight-action .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 13px 20px !important;
+    }
+
+    .spotlight-note {
+        text-align: center !important;
+        font-size: 11.5px !important;
+    }
+
+    /* Section 04 Subcards */
+    .subcard-media {
+        height: 175px !important;
+    }
+
+    .subcard-body {
+        padding: 18px 16px 16px !important;
+    }
+
+    .subcard-body h4 {
+        font-size: 18px !important;
+    }
+
+    .subcard-body p {
+        font-size: 13px !important;
+    }
+
+    /* Button full-width touch safety */
+    .button {
+        padding: 12px 18px !important;
+        gap: 16px !important;
+    }
+
+    /* Footer Mobile Stack */
+    .footer-top {
+        grid-template-columns: 1fr !important;
+        gap: 26px !important;
+    }
+}
+
+/* Small Handhelds & Ultra-Compact Mobile (max-width: 360px) */
+@media (max-width: 360px) {
+    .wrap {
+        width: calc(100% - 24px) !important;
+    }
+
+    .brand-name b {
+        font-size: 13.5px !important;
+    }
+
+    .brand-name small {
+        display: none !important;
+    }
+
+    .hero h1 {
+        font-size: 28px !important;
+    }
+
+    .spotlight-content h3 {
+        font-size: 20px !important;
+    }
+
+    .cornerstones-subheading {
+        font-size: 20px !important;
+    }
+
+    .cornerstone-card {
+        padding: 20px 14px 16px !important;
     }
 }
