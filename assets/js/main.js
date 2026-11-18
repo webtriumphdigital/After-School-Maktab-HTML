@@ -16,7 +16,7 @@
   const header = $('#siteHeader');
   const nav = $('#mainNav');
   const toggle = $('#menuToggle');
-  const progress = $('#scrollProgress');
+  const scrollTopBtn = $('#scrollToTop');
 
   function closeMenu() {
     nav.classList.remove('open');
@@ -48,12 +48,20 @@
   }, { passive: true });
 
   function scrollStatus() {
-    header.classList.toggle('scrolled', window.scrollY > 35);
-    const range = document.documentElement.scrollHeight - window.innerHeight;
-    progress.style.width = (range > 0 ? Math.min(100, (100 * window.scrollY) / range) : 0) + '%';
+    const scrollY = window.scrollY;
+    header.classList.toggle('scrolled', scrollY > 35);
+    if (scrollTopBtn) {
+      scrollTopBtn.classList.toggle('visible', scrollY > 380);
+    }
   }
   scrollStatus();
   window.addEventListener('scroll', scrollStatus, { passive: true });
+
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   /* ==========================================================================
      Scroll Reveal & Section Intersection Engine

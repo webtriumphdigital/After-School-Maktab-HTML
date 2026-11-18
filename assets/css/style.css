@@ -114,21 +114,100 @@ summary:focus-visible {
     top: 14px;
 }
 
-.progress {
+/* Screen-reader utility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Scroll to Top Floating Button */
+.scroll-to-top {
     position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 1200;
-    height: 3px;
+    bottom: 28px;
+    right: 28px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--forest);
+    color: var(--gold);
+    border: 1px solid rgba(232, 198, 142, 0.45);
+    box-shadow: 0 10px 28px rgba(15, 41, 34, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px) scale(0.92);
+    transition:
+        opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0.28s,
+        background 0.22s,
+        border-color 0.22s,
+        box-shadow 0.22s;
     pointer-events: none;
 }
 
-.progress div {
-    height: 100%;
-    background: #dbb57a;
-    width: 0;
-    transition: width 0.08s linear;
+.scroll-to-top svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    transition: transform 0.25s ease;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.scroll-to-top:hover {
+    background: #0d2720;
+    border-color: var(--gold);
+    color: #fff4e0;
+    box-shadow:
+        0 14px 34px rgba(15, 41, 34, 0.42),
+        0 0 16px rgba(232, 198, 142, 0.28);
+    transform: translateY(-3px) scale(1.04);
+}
+
+.scroll-to-top:hover svg {
+    transform: translateY(-2.5px);
+}
+
+.scroll-to-top:active {
+    transform: translateY(0) scale(0.96);
+}
+
+@media (max-width: 680px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 18px;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .scroll-to-top svg {
+        width: 19px;
+        height: 19px;
+    }
+}
+
+@media print {
+    .scroll-to-top {
+        display: none !important;
+    }
 }
 
 .section-pad {
