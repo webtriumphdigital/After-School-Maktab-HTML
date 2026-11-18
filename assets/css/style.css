@@ -10583,3 +10583,51 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
         padding: 20px 14px 16px !important;
     }
 }
+
+/* ==========================================================================
+   Image, Icon & SVG Directory Loading Compatibility
+   ========================================================================== */
+.brand-mark img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+.bento-icon-box img {
+    width: 22px !important;
+    height: 22px !important;
+    object-fit: contain !important;
+    display: block !important;
+}
+
+img.pillar-rosette {
+    position: absolute !important;
+    height: 360px !important;
+    width: 360px !important;
+    max-width: 90% !important;
+    opacity: 0.38 !important;
+    object-fit: contain !important;
+    transform-origin: center center !important;
+    animation: orbital 75s linear infinite !important;
+    pointer-events: none !important;
+}
+
+.admission-motif img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: contain !important;
+}
+
+.scroll-to-top img {
+    width: 22px !important;
+    height: 22px !important;
+    object-fit: contain !important;
+    display: block !important;
+    transition: transform 0.25s ease !important;
+}
+
+.scroll-to-top:hover img {
+    transform: translateY(-2.5px) !important;
+}
